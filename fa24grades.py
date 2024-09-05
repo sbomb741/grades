@@ -1,42 +1,29 @@
 LetterGrades = []
 
 totalSemCredits = 13
-credits = (3,3,3,3,1)
+credits = (3,3,4,3)
 
 def cse410():
 
-    #Quizzes = 10%
-    Quiz1 = 100
-    Quiz2 = 100
-    Quiz3 = 100
-    Quiz4 = 14/16*100 
-    Quiz5 = 100
-    Quiz6 = 100
-    Quizzes = (Quiz1+Quiz2+Quiz3+Quiz4+Quiz5+Quiz6)/(600) * 10
+    # Projects 65%
+    project1 = 0
+    project2 = 0
+    project3 = 0
+    project4 = 0
+    project5 = 0
+    project6 = 0
+    project7 = 0
+    projects = (project1+project2+project3+project4+project5+project6+project7)/1 *.65
 
-    #Projects = 60%
-    lab1 = 90
-    lab2 = 100
-    lab3 = 100
-    lab4 = 88
-    lab5 = 100
-    lab6 = 100
-    lab7 = 110*2
-    labExam = 1
-    if labExam >=.65:
-        labExam = 1
-
-    Projects = (lab1+lab2+labExam*(lab3+lab4+lab5+lab6+lab7))/800 * 60
+    # Presentation 15%
+    presentation = 0 *.15
     
-    #Exams 30% (10% each)
-    Exam1 = 100
-    Exam2 = 92
-    FE = 98
-
-    Exams = (Exam1+Exam2+FE)/(300) * 30
+    # Exams 10% each
+    midterm = 0 *.1
+    final_exam = 0 *.1
 
     #Total Grade
-    CurrentGrade = (Quizzes + Projects + Exams )/(100)
+    CurrentGrade = (projects+presentation+midterm+final_exam)/100
 
     
     if CurrentGrade >= .93333:
@@ -71,38 +58,28 @@ def cse410():
 
 def cse450():
 
-    #Quizzes = 10%
-    Quiz1 = 100
-    Quiz2 = 100
-    Quiz3 = 100
-    Quiz4 = 14/16*100 
-    Quiz5 = 100
-    Quiz6 = 100
-    Quizzes = (Quiz1+Quiz2+Quiz3+Quiz4+Quiz5+Quiz6)/(600) * 10
+    requirement_doc =                   .12* 0
+    design_doc =                        .20* 0
+    engineering_notebook =              .04* 0
+    requirement_presentation =          .04* 0
+    midsem_design_review_presentation = .08* 0
+    final_design_review_presentation =  .10* 0
+    client_assessment =                 .10* 0
+    bill_of_materials =                 .08* 0
+    skills_assessment =                 .08* 0
+    work_environment_assessment =       .04* 0
+    progress_reports =                  .04* 0
+    attendance_for_required_lectures =  .04* 0
+    group_peer_review =                 .04* 0
 
-    #Projects = 60%
-    lab1 = 90
-    lab2 = 100
-    lab3 = 100
-    lab4 = 88
-    lab5 = 100
-    lab6 = 100
-    lab7 = 110*2
-    labExam = 1
-    if labExam >=.65:
-        labExam = 1
+    total_percent_earned = (requirement_doc+design_doc+engineering_notebook+requirement_presentation+
+                            midsem_design_review_presentation+final_design_review_presentation+client_assessment+
+                            bill_of_materials+skills_assessment+work_environment_assessment+progress_reports+
+                            attendance_for_required_lectures+group_peer_review)
+    total_percent_attempted = (0+1)
 
-    Projects = (lab1+lab2+labExam*(lab3+lab4+lab5+lab6+lab7))/800 * 60
     
-    #Exams 30% (10% each)
-    Exam1 = 100
-    Exam2 = 92
-    FE = 98
-
-    Exams = (Exam1+Exam2+FE)/(300) * 30
-
-    #Total Grade
-    CurrentGrade = (Quizzes + Projects + Exams )/(100)
+    CurrentGrade = total_percent_earned/total_percent_attempted
 
     
     if CurrentGrade >= .93333:
@@ -135,69 +112,93 @@ def cse450():
                 str(gr))
 
 
-def cse496():
-    LetterGrades.append('A')
-    print("Current CSE 496 Grade = A\tAverage = 100")
+def sta301():
+
+    # Extra credit earned through the semester
+    earned_extra_credit = 0
+
+    # Graded homeworks 
+    # 
+    # There will be 105-115 points worth of graded homework throughout the semester. 
+    # Your homework grade will be a number between 0 and 100, depending on how many graded homework points you got correct. 
+    # If you get 90 out of 110, your grade will be 90 out of 100. 
+    # If you get 104 out of 110, your grade will record as 100 out of 100. 
+    homeworks = {
+        "hw2yellow" : 0,
+        "hw2blue"   : 0,
+        "hw2green"  : 0,
+        "hw2gray"   : 0
+    }
+
+    earned_homework_points = 0
+    total_homework_points = 1
+
+    for value in homeworks.values():
+        earned_homework_points += value
 
 
-def sta301LEC():
+    # Quizzes: up to 6 quizzes, 5 points each (drop 1)
+    quiz1 = 0
+    quiz2 = 0
+    quiz3 = 0
+    quiz4 = 0
+    quiz5 = 0
+    quiz6 = 0
+    
+    earned_quiz_points = quiz1+quiz2+quiz3+quiz4+quiz5+quiz6
+    total_quiz_points = 0
 
-    #Participation 5%
-    Participation = 6
 
-    #Homeworks 20% (5% each)
-    HW1 = 93
-    HW2 = 86
-    HW4 = 52
-    Homeworks = (HW1+HW2+HW4)/(300) * 15
+    # Exams: 3 @ 100 points each
+    exam1 = 0
+    exam2 = 0
+    exam3 = 0
 
-    #Project Assignment 35% +5% for hw3
-    PA1_HW3 = .20* 79
-    PA2 = .20* 94
-    PAs = (PA1_HW3+PA2)
+    earned_exam_points = exam1+exam2+exam3
+    total_exam_points = 0
 
-    #Final 20%
-    FinalPresentation     = .10* 75.8
-    FinalProjectReport    = .10* 80
-    Final = FinalPresentation+FinalProjectReport
+    CurrentGrade = ((earned_homework_points+earned_quiz_points+earned_exam_points+earned_extra_credit)/
+                    (total_homework_points+total_quiz_points+total_exam_points))
 
-    #Final Exam 20%
-    FinalExam = .20* 131/2 #/200*100
-
-    #Total Grade
-    CurrentGrade = (Participation+Homeworks+PAs+Final+FinalExam)/100 #change to 100 for all grades
-
-    if CurrentGrade >= .80:
+    if CurrentGrade >= .94:
         LetterGrade = "A"
-    elif CurrentGrade >= .75:
+    elif CurrentGrade >= .91:
         LetterGrade = "A-"
-    elif CurrentGrade >= .70:
+    elif CurrentGrade >= .88:
         LetterGrade = "B+"
-    elif CurrentGrade >= .65:
+    elif CurrentGrade >= .84:
         LetterGrade = "B"
-    elif CurrentGrade >= .60:
+    elif CurrentGrade >= .81:
         LetterGrade = "B-"
-    elif CurrentGrade >= .55:
+    elif CurrentGrade >= .78:
         LetterGrade = "C+"
-    elif CurrentGrade >= .45:
+    elif CurrentGrade >= .71:
         LetterGrade = "C"
+    elif CurrentGrade >= .68:
+        LetterGrade = "C-"
+    elif CurrentGrade >= .60:
+        LetterGrade = "D+"
+    elif CurrentGrade >= .55:
+        LetterGrade = "D"
     else:
-        LetterGrade = "F/D"
+        LetterGrade = "F"
 
     LetterGrades.append(LetterGrade)
 
     print("Current STA 301 Grade = " + LetterGrade + "\tAverage = " +
                 str(CurrentGrade*100))
-    
 
-def sta301REC():
-    pass
+def cse496():
+    LetterGrades.append('A')
+    print("Current CSE 496 Grade = A\tAverage = 100")
 
 
 # def cse495():
 #     LetterGrades.append('A')
 
+
 #======================================================================#
+
 
 #Converts Letter Grade to Decimal (out of 4.0) helper function
 def letterToGPA(letter):
@@ -296,7 +297,7 @@ def printGPAs():
 
     print("Current GPA:\t " + str(round(GPA(LetterGrades),4)))
     print("UB GPA:\t\t " +  str(round(overallUBGPA,4))+latin)
-    print("Cummulative GPA: " + str(round(overallGPA,4)))
+    print("Cumulative GPA: " + str(round(overallGPA,4)))
     print(" ")
 
 
@@ -305,9 +306,8 @@ def callClasses():
     print(" ")
     cse410()
     cse450()
+    sta301()
     cse496()
-    sta301LEC()
-    sta301REC()
     # cse495()
     print(" ")
 
