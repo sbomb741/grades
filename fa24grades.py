@@ -295,10 +295,20 @@ def printGPAs():
     elif overallUBGPA >=3.2:
         latin = "\t\tcum laude"
 
-    print("Current GPA:\t " + str(round(GPA(LetterGrades),4)))
-    print("UB GPA:\t\t " +  str(round(overallUBGPA,4))+latin)
-    print("Cumulative GPA: " + str(round(overallGPA,4)))
-    print(" ")
+    print("Current GPA:\t" + str(round(GPA(LetterGrades),4)))
+    print("UB GPA:\t\t" + str(round(overallUBGPA,4))+latin)
+    print("Cumulative GPA:\t" + str(round(overallGPA,4)))
+
+    # determine latin based on previous semesters
+    overallUBGPA = 354.67/92
+    if overallUBGPA >=3.75:
+        latin = "\tsumma cum laude"
+    elif overallUBGPA >=3.5:
+        latin = "\tmagna cum laude"
+    elif overallUBGPA >=3.2:
+        latin = "\tcum laude"
+    print("\nSP24 UB GPA:\t\t" + str(round(overallUBGPA,4))+latin)
+    print("SP24 Cumulative GPA:\t" + str(round(435.71/114,4)))
 
 
 #Main function to call the classes
