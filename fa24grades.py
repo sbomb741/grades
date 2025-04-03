@@ -1,7 +1,8 @@
 LetterGrades = []
 
-totalSemCredits = 13
-credits = (3,3,4,3)
+totalSemCredits = 10
+credits = (3,3,4)
+# pass fail 3 credit ignored
 
 def cse410():
 
@@ -23,7 +24,7 @@ def cse410():
     final_exam = 0 *.1
 
     #Total Grade
-    CurrentGrade = (projects+presentation+midterm+final_exam)/100
+    CurrentGrade = .95#(projects+presentation+midterm+final_exam)/100
 
     
     if CurrentGrade >= .93333:
@@ -79,7 +80,7 @@ def cse450():
     total_percent_attempted = (0+1)
 
     
-    CurrentGrade = total_percent_earned/total_percent_attempted
+    CurrentGrade = .95#total_percent_earned/total_percent_attempted
 
     
     if CurrentGrade >= .93333:
@@ -115,7 +116,9 @@ def cse450():
 def sta301():
 
     # Extra credit earned through the semester
-    earned_extra_credit = 0
+    earned_extra_credit_lec = 12.6 #
+    earned_extra_credit_rec =  5.5# 
+    earned_extra_credit = earned_extra_credit_lec + earned_extra_credit_rec - 5
 
     # Graded homeworks 
     # 
@@ -123,39 +126,33 @@ def sta301():
     # Your homework grade will be a number between 0 and 100, depending on how many graded homework points you got correct. 
     # If you get 90 out of 110, your grade will be 90 out of 100. 
     # If you get 104 out of 110, your grade will record as 100 out of 100. 
-    homeworks = {
-        "hw2yellow" : 0,
-        "hw2blue"   : 0,
-        "hw2green"  : 0,
-        "hw2gray"   : 0
-    }
 
-    earned_homework_points = 0
-    total_homework_points = 1
-
-    for value in homeworks.values():
-        earned_homework_points += value
+    earned_homework_points = 100   # ch 5.4
+    total_homework_points = 100
 
 
     # Quizzes: up to 6 quizzes, 5 points each (drop 1)
-    quiz1 = 0
-    quiz2 = 0
-    quiz3 = 0
-    quiz4 = 0
+    quiz1 = 4
+    quiz2 = 5
+    quiz3 = 5
+    quiz4 = 5
     quiz5 = 0
     quiz6 = 0
     
-    earned_quiz_points = quiz1+quiz2+quiz3+quiz4+quiz5+quiz6
-    total_quiz_points = 0
+    earned_quiz_points = 25 #quiz1+quiz2+quiz3+quiz4+quiz5+quiz6
+    total_quiz_points = 25
 
 
     # Exams: 3 @ 100 points each
-    exam1 = 0
-    exam2 = 0
-    exam3 = 0
+    exam1 = 100
+    exam2 = 91
+    exam3 = 85
 
     earned_exam_points = exam1+exam2+exam3
-    total_exam_points = 0
+    total_exam_points = 300
+    # total_points_earned = (earned_homework_points+earned_quiz_points+earned_exam_points+earned_extra_credit)
+    # points_needed_on_exam3 = 425*.94 - total_points_earned
+    # print(f"Minimum points needed on stats exam3: {points_needed_on_exam3}")
 
     CurrentGrade = ((earned_homework_points+earned_quiz_points+earned_exam_points+earned_extra_credit)/
                     (total_homework_points+total_quiz_points+total_exam_points))
@@ -189,7 +186,7 @@ def sta301():
                 str(CurrentGrade*100))
 
 def cse496():
-    LetterGrades.append('A')
+    # LetterGrades.append('A')
     print("Current CSE 496 Grade = A\tAverage = 100")
 
 
